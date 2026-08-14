@@ -1,0 +1,522 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/riddhimach24-dev/Data_Science/blob/main/numpy.day1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "qqGq9c-AKdS-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "nNTli1vuKdDp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# **Using NumPy**\n",
+        "\n",
+        "Once you've installed NumPy you can import it as a library:"
+      ],
+      "metadata": {
+        "id": "8WbyBhT8dimS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "dk6dssnOc_PJ",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "5f2b66cf-16d4-4c66-dedf-fa7d1029528b"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]\n"
+          ]
+        }
+      ],
+      "source": [
+        "l = [1,2,3,4,5]*5    #in list *5 is not possible\n",
+        "print(l)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Numpy has many built-in functions and capabilities. We won't cover them all but instead we will focus on some of the most important aspects of Numpy: vectors,arrays,matrices, and number generation. Let's start by discussing arrays.\n",
+        "\n",
+        "# Numpy Arrays\n",
+        "\n",
+        "NumPy arrays are the main way we will use Numpy throughout the course. Numpy arrays essentially come in two flavors: vectors and matrices. Vectors are strictly 1-d arrays and matrices are 2-d (but you should note a matrix can still have only one row or one column).\n",
+        "\n",
+        "Let's begin our introduction by exploring how to create NumPy arrays.\n",
+        "\n",
+        "## Creating NumPy Arrays\n",
+        "\n",
+        "### From a Python List\n",
+        "\n",
+        "We can create an array by directly converting a list or list of lists:"
+      ],
+      "metadata": {
+        "id": "VoxsYjcSdwpN"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np"
+      ],
+      "metadata": {
+        "id": "aG9DPxARdtvc"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Lets create a matrix using list"
+      ],
+      "metadata": {
+        "id": "326Aztvgg95n"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l = [1,2,3,4,5]\n",
+        "arr = np.array(l)\n",
+        "print(arr*5)"
+      ],
+      "metadata": {
+        "id": "BzcQZxDbgeAx",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "21e3f0b7-b933-45cb-c7cf-08ee600b58ec"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 5 10 15 20 25]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Now lets see how matlix looks like using numpy arrays"
+      ],
+      "metadata": {
+        "id": "FsXMKhbXhNvE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l = [[1,2,3,4],[5,6,7,8]]\n",
+        "arr = np.array(l)\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "id": "gWi7HU10hK0I",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "21b130de-38f7-437b-cc19-357e3cc5f4df"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1 2 3 4]\n",
+            " [5 6 7 8]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## Built-in Methods\n",
+        "\n",
+        "there are lots of build in methods to create an array lets create some and see\n",
+        "\n",
+        "np.zeros(), np.ones(), np.full()\n",
+        "\n",
+        "np.arange(), np.linspace()\n",
+        "\n",
+        "np.eye()"
+      ],
+      "metadata": {
+        "id": "rVaa-RFKhbkn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.zeros(4)   #0. - indicates that methods is made using built in function\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "id": "0vyeu839hSwI",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "32750d80-5e5a-478a-c2d4-63130cc95f5e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0. 0. 0. 0.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(np.zeros([4,4]))  #[no. of rows, no. of columns]"
+      ],
+      "metadata": {
+        "id": "YcWfo42uh1ST",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "bed8d239-1f1c-4057-c17f-00963c7f22c7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0. 0. 0. 0.]\n",
+            " [0. 0. 0. 0.]\n",
+            " [0. 0. 0. 0.]\n",
+            " [0. 0. 0. 0.]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.ones(4)\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "id": "aZNFY4Oqh6PW",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "898ecaf4-1b73-474d-bf19-8b4787b4fbec"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1. 1. 1. 1.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.ones([2,2])\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "id": "f55vFuIGiC8D",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "d8ec9bac-8e2e-47e1-cec9-883df46f81c9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1. 1.]\n",
+            " [1. 1.]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.full(5,7)     #for creating custom array we use .full\n",
+        "print(arr)\n"
+      ],
+      "metadata": {
+        "id": "YDt7psQyiHTn",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "172d4e9b-3847-48c6-81fe-fa914ef8e16d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[7 7 7 7 7]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.arange(1,11,2)  #same as range\n",
+        "arr\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "pYx_MtmuiW5n",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "9b8d16e6-ba12-4a1f-f8db-b7cfef701451"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([1, 3, 5, 7, 9])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.linspace(0,1,5)    #evenly distributed 5 values\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "id": "9UC6mzuziZ7L",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "af82eb94-30da-4629-cde2-cb7258962b7b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0.   0.25 0.5  0.75 1.  ]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.eye(6)\n",
+        "print(arr)"
+      ],
+      "metadata": {
+        "id": "ancbebZFisjV",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "24ee9fa8-e10c-4161-8b04-b683a513aab1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1. 0. 0. 0. 0. 0.]\n",
+            " [0. 1. 0. 0. 0. 0.]\n",
+            " [0. 0. 1. 0. 0. 0.]\n",
+            " [0. 0. 0. 1. 0. 0.]\n",
+            " [0. 0. 0. 0. 1. 0.]\n",
+            " [0. 0. 0. 0. 0. 1.]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.random.rand(3,3)    #rand(rows,columns)\n",
+        "arr                          #float"
+      ],
+      "metadata": {
+        "id": "PEo5eTCVizk_",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "5073eb47-5f8e-452d-dad6-757fc07def40"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0.19804247, 0.22001983, 0.2890401 ],\n",
+              "       [0.43096408, 0.45673401, 0.11020628],\n",
+              "       [0.25461708, 0.56047569, 0.87876259]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 28
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.random.randint(1,10,(3,3))     #(start,stop,(shape))\n",
+        "print(arr)                              #integer"
+      ],
+      "metadata": {
+        "id": "JgxT7EyHi20d",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b99bcbe9-ec08-42cb-c60d-1ce8539b6f30"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[3 2 7]\n",
+            " [5 2 2]\n",
+            " [1 1 7]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr = np.random.randn(2,4)\n",
+        "print(arr)\n",
+        "#random values that can be negative as well"
+      ],
+      "metadata": {
+        "id": "Zt3FhBjsi6gz",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "6849a7d1-57e6-4596-9142-7f69ed55612b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[-0.49876286  1.89659195 -1.51779747 -0.60011682]\n",
+            " [-0.83628806 -0.21734828  0.3873683   2.02376288]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "cc7lQYC1i81R"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "arange → step-based values\n",
+        "\n",
+        "linspace → fixed number of values\n",
+        "\n",
+        "eye → identity matrix\n",
+        "\n",
+        "rand → random floats (0–1)\n",
+        "\n",
+        "randint → random integers in a range\n",
+        "\n",
+        "randn → random values from bell curve distribution"
+      ],
+      "metadata": {
+        "id": "PudjNuBOjUUN"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Gteak0uUjVCM"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
